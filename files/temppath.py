@@ -24,13 +24,13 @@ ANSIBLE_METADATA = {'status': ['preview'],
 
 DOCUMENTATION = '''
 ---
-module: tempfile
+module: temppath
 version_added: "2.3"
 author:
   - Krzysztof Magosa
 short_description: Creates temporary files and directories.
 description:
-  - The M(tempfile) module creates temporary files and directories. C(mktemp) command takes different parameters on various systems, this module helps to avoid troubles related to that. Files/directories created by module are accessible only by creator. In case you need to make them world-accessible you need to use M(file) module.
+  - The M(temppath) module creates temporary files and directories. C(mktemp) command takes different parameters on various systems, this module helps to avoid troubles related to that. Files/directories created by module are accessible only by creator. In case you need to make them world-accessible you need to use M(file) module.
 options:
   state:
     description:
@@ -57,12 +57,12 @@ options:
 
 EXAMPLES = """
 - name: create temporary build directory
-  tempfile:
+  temppath:
     state: directory
     suffix: build
 
 - name: create temporary file
-  tempfile:
+  temppath:
     state: file
     suffix: temp
 """
